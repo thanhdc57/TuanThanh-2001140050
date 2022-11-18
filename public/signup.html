@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<head>
+    <title>Signup</title>
+    <link rel="stylesheet" href="signup.css">
+</head>
+<body>
+    <div class="signup">
+      <div class="signup-left">
+        <img class="signup-image" src="./images/signup.svg"/>
+      </div>
+        <form class="card">
+             <h2 class="card-header">
+                Register
+            </h2>
+            <div class="card-content">
+                <div class = "card-content-div">
+                  <label>Name</label>
+                  <div class="card-name">
+                  <input  
+                    class ="card-input card-first"
+                    type="text"
+                    placeholder="First"
+                    />
+                    <input  
+                    class ="card-input card-last"
+                    type="text"
+                    placeholder="Last"
+                    />
+                  </div>
+                </div>
+                
+                <div class = "card-content-div">
+                    <label>Mobile</label>
+                    <input 
+                    class ="card-input"
+                    type="number"
+                    />
+                </div>
+                <div class = "card-content-div">
+                  <label>Username</label>
+                  <input 
+                  class ="card-input"
+                  type="text"
+                  />
+                </div>
+                <div class = "card-content-div">
+                  <label>Password</label>
+                  <input 
+                  class ="card-input"
+                  type="password"
+                  pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*(\W|_)).{5,}$" 
+                  title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
+                  />
+                </div>
+                <div class = "card-content-div">
+                    <label>Confirm Password</label>
+                    <input 
+                    class ="card-input"
+                    type="password"
+                    pattern="(?=.\d)(?=.[a-z])(?=.*[A-Z]).{8,}" 
+                    title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
+                    />
+                  </div>
+                <div class="card-content-div">
+                  <button class = "card-btn">Sign up</button>
+                </div>
+                <div class="card-footer">
+                <p>Already Registered ? <strong> <a href="login.html" class="signin-text">Signin</a></strong></p>
+                </div>
+            </div>
+
+        </form>
+       
+    </div>
+</body>
+</html>

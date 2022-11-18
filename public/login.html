@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<head>
+    <title>Login</title>
+    <link rel="stylesheet" href="login.css">  
+</head>
+<body>
+    <div class="signin">
+      <div class="signin-div">
+        <img class="signin-img" src="./images/login.svg"/>
+      </div>
+        <div class="card">
+             <h2 class="card-header">
+                Login
+            </h2>
+            <form class="card-content">
+                <div class = "card-content-div">
+                  <label>Username</label>
+                  <input 
+                  class ="card-input-username"
+                  type="username"
+                   />
+                </div>
+                <div class = "card-content-div">
+                  <label>Password</label>
+                  <input 
+                  class ="card-input-password" 
+                  type="password"
+                  pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*(\W|_)).{5,}$" 
+                  title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
+
+                  />
+                </div>
+                <div class="card-content-div">
+                  <button 
+                  class = "card-btn">Signin</button>
+                </div>
+                <div class="card-footer">
+                <p>No Account ? <strong> <a href="signup.html" class="signup-text">Signup</a></strong></p>
+                <p><a href="" class="signup-text">Forget Password</a></p>
+                </div>
+            </form>   
+
+        </div>
+       
+    </div>
+</body>
+</html>
