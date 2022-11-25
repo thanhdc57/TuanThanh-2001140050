@@ -3,6 +3,7 @@
     <title>Login</title>
     <link rel="stylesheet" href="login.css">  
 </head>
+<script src="login.js"></script>
 <body>
     <div class="signin">
       <div class="signin-div">
@@ -12,23 +13,14 @@
              <h2 class="card-header">
                 Login
             </h2>
-            <form class="card-content">
+            <form class="card-content" id = "form-sign-in">
                 <div class = "card-content-div">
                   <label>Username</label>
-                  <input 
-                  class ="card-input-username"
-                  type="username"
-                   />
+                  <input  id='username' class ="card-input-username" type="text"/>
                 </div>
                 <div class = "card-content-div">
                   <label>Password</label>
-                  <input 
-                  class ="card-input-password" 
-                  type="password"
-                  pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*(\W|_)).{5,}$" 
-                  title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
-
-                  />
+                  <input id='password' class ="card-input-password" type="password"/>
                 </div>
                 <div class="card-content-div">
                   <button 
@@ -39,9 +31,7 @@
                 <p><a href="" class="signup-text">Forget Password</a></p>
                 </div>
             </form>   
-
         </div>
-       
     </div>
 </body>
 </html>
