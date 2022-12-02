@@ -26,7 +26,7 @@
    */
    
    function addEntry(rows) {
-    let resgister = id("registered")
+    let courseA = id("course")
     for (let i = 0; i < rows.length; i++) {
         let courseName = rows[i]["courseName"];
         let course = rows[i]["course"];
@@ -34,17 +34,25 @@
         let a = document.createElement("a");
         let button = document.createElement("button");
         button.id = "leave" 
+        button.className = "btn-leave";
         button.innerText = "leave";
+        a.href = "coursepage.html"
+        a.id = "enter-course"
         a.className = "post";
         a.innerText = courseName
         li.appendChild(a)
         li.appendChild(button)
-        resgister.appendChild(li);
+        courseA.appendChild(li);
       }
       document.querySelectorAll("#leave").forEach((e) => {
         e.addEventListener("click",leaveCourse);
         e.myParam = rows;
      });
+
+     document.querySelectorAll("#enter-course").forEach((e) => {
+      e.addEventListener("click",enterCourse);
+      e.myParam = rows;
+   });
   }
   function leaveCourse(e) {
     let target = e.target;
@@ -70,6 +78,26 @@
       .then(checkResult)
       .catch(console.log)
 }
+
+function enterCourse(e){
+  let target = e.target;
+  console.log(target)
+    let p = target.parentElement;
+    let a = p.children[0].innerText;
+    let rows = e.target.myParam;
+    let CID = ""
+    for(let i =0; i< rows.length; i++) {
+      let courseName = rows[i]["courseName"];
+        if(courseName == a){
+          CID = rows[i]["courseID"];
+        }
+    }
+    const d = new Date();
+  d.setTime(d.getTime() + (7*24*60*60*1000));
+  let expires = "expires="+ d.toUTCString();
+  document.cookie = "course_id" + "=" + CID + ";" + expires + ";path=/";
+}
+
 function checkResult(result){
   if(result === "true"){
     alert("leave course successfully");
@@ -78,7 +106,6 @@ function checkResult(result){
     alert("cannot not leave course");
     window.location.href = 'mycourses.html';
   }
- 
   } 
 
   /* ------------------------------ Helper Functions  ------------------------------ */

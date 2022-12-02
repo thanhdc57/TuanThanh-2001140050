@@ -4,6 +4,15 @@
     margin: 0;
     box-sizing: border-box;
 }
+
+body {
+    background-image: url('./images/background_6.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    height: 100vh;
+    background-position: center;
+  }
 .contain{
     position: relative;
 }
@@ -12,7 +21,7 @@
     padding: 10px;
     justify-content:space-between;
     align-items: center;
-    background-color: #e8c5c5;
+    background-color: #8c0025;
 
 }
 .nav-item-left{
@@ -28,12 +37,11 @@
     
 }
 .nav-link {
-    margin-top: 12px;
+    margin-top: 15px;
     text-decoration: none;
-    padding: 20px;
-    color: black;
+    color: white;
     font-family: 'Poppins', sans-serif;
-    font-size: .9rem;
+    font-size: 20px;
     font-weight: 500;
 }
 .nav-link:hover{
@@ -47,22 +55,49 @@
     font-weight: 900;
 }
 
-.image {
-    position: absolute;
-    top: 20%;
-    right: 10%;
-}
 .post {
 
     font-family: 'Poppins', sans-serif;
   
   }
- #registered li{
+  
+ #course li{
     padding-bottom: 30px;
-    margin-top: 10px;
-    border:1px solid rgb(179, 171, 171);
+     margin-bottom: 10px;
+    font-size: 20px;
+    font-weight: 500;
+    
 }
 
-#registered li:first-child {
-    margin-top:0;
+.btn-leave {
+    margin-left: 30px;
+    background-color: rgb(243, 190, 190);
+    color: rgb(31, 30, 30);
+    font-size: 20px;
+    padding: 10px;
+    border-radius: 8px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    width: 100px;
+} 
+.btn-leave:hover{
+    background-color: rgb(242, 12, 12);
+    color: white;
 }
+
+.btn-enroll {
+    margin-left: 30px;
+    background-color: rgb(243, 190, 190);
+    color: rgb(31, 30, 30);
+    font-size: 20px;
+    padding: 10px;
+    border-radius: 8px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    width: 100px;
+} 
+.btn-enroll:hover{
+    background-color: rgb(46, 240, 20);
+    color: white;
+}
+

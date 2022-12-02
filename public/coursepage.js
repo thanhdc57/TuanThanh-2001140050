@@ -1,6 +1,6 @@
 'use strict';
 (function() {
-  const API_URL = '/api/my/courses';
+  const API_URL = '/api/course/:courseid/quizes';
 
   window.addEventListener('load', init);
 
@@ -8,6 +8,8 @@
    * TODO - setup the sign-in button on initial page load
    */
   function init() {
+
+    
     fetch(API_URL,{
         method: "GET"
     })
@@ -26,60 +28,52 @@
    */
    
    function addEntry(rows) {
-    let resgister = id("registered")
+    let quizz = id("quizz")
+    let heading = id("course-name")
+    heading.innerText = rows[0]["courseName"]
     for (let i = 0; i < rows.length; i++) {
-        let courseName = rows[i]["courseName"];
-        let course = rows[i]["course"];
+        let quizName = rows[i]["quizText"];
         let li = document.createElement("li")
         let a = document.createElement("a");
-        let button = document.createElement("button");
-        button.id = "leave" 
-        button.innerText = "leave";
-        a.className = "post";
-        a.innerText = courseName
+        a.className = "listQuiz";
+        a.href = "doquiz.html"
+        a.id = "doquiz"
+        a.innerText = quizName;
         li.appendChild(a)
-        li.appendChild(button)
-        resgister.appendChild(li);
+        quizz.appendChild(li);
       }
-      document.querySelectorAll("#leave").forEach((e) => {
-        e.addEventListener("click",leaveCourse);
+      document.querySelectorAll("#doquiz").forEach((e) => {
+        e.addEventListener("click",doQuiz);
         e.myParam = rows;
      });
   }
-  function leaveCourse(e) {
+  function doQuiz(e) {
     let target = e.target;
     let p = target.parentElement;
     let a = p.children[0].innerText;
     let rows = e.target.myParam;
-    let CID = ""
+    let quiz_id = ""
     for(let i =0; i< rows.length; i++) {
-      let courseName = rows[i]["courseName"];
-        if(courseName == a){
-          CID = rows[i]["courseID"];
+      let quizText = rows[i]["quizText"];
+        if(quizText == a){
+          quiz_id = rows[i]["quizID"];
         }
     }
-
-    let formBody = new FormData();
-    formBody.append("courseID",CID);
-      fetch(API_URL,{
-        method: "POST",
-        body: formBody
-      })
-      .then(statusCheck)
-      .then(resp => resp.text())
-      .then(checkResult)
-      .catch(console.log)
+    const d = new Date();
+    d.setTime(d.getTime() + (7*24*60*60*1000));
+    let expires = "expires="+ d.toUTCString();
+    document.cookie = "quiz_id" + "=" + quiz_id + ";" + expires + ";path=/";
 }
-function checkResult(result){
-  if(result === "true"){
-    alert("leave course successfully");
-    window.location.href = 'mycourses.html';
-  } else{
-    alert("cannot not leave course");
-    window.location.href = 'mycourses.html';
-  }
+// function checkResult(result){
+//   if(result === "true"){
+//     alert("leave course successfully");
+//     window.location.href = 'mycourses.html';
+//   } else{
+//     alert("cannot not leave course");
+//     window.location.href = 'mycourses.html';
+//   }
  
-  } 
+//   } 
 
   /* ------------------------------ Helper Functions  ------------------------------ */
 

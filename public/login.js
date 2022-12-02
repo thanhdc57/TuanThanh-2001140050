@@ -8,12 +8,20 @@
    * TODO - setup the sign-in button on initial page load
    */
   function init() {
-    id("form-sign-in").addEventListener("submit", function(e){
+    let action =  id("form-sign-in");
+    action.addEventListener('keypress', function(e){
+      if(e.key === 'Enter'){
+         e.preventDefault();
+      let uname = id("username").value;
+      let pword = id("password").value;
+      signIn(uname,pword)
+      }
+    });
+    action.addEventListener('submit', function(e){
         e.preventDefault();
         let uname = id("username").value;
         let pword = id("password").value;
         signIn(uname,pword)
-        
       });
   
     // TODO

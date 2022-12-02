@@ -27,19 +27,20 @@
    */
    
    function addEntry(rows) {
-    let resgister = id("registered")
+    let courseB = id("course")
     for (let i = 0; i < rows.length; i++) {
         let courseName = rows[i]["courseName"];
         let li = document.createElement("li")
         let a = document.createElement("a");
         let button = document.createElement("button");
         button.id = "enroll" 
+        button.className = "btn-enroll";
         button.innerText = "enroll";
         a.className = "post";
         a.innerText = courseName
         li.appendChild(a)
         li.appendChild(button)
-        resgister.appendChild(li);
+        courseB.appendChild(li);
       }
 
         document.querySelectorAll("#enroll").forEach((e) => {
@@ -49,8 +50,7 @@
   }
   function enrollment(e) {
       let target = e.target;
-      let p = target.parentElement;
-      let a = p.children[0].innerText;
+      let a = target.previousElementSibling.innerText;
       let rows = e.target.myParam;
       let CID = ""
       for(let i =0; i< rows.length; i++) {
