@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<head>
+    <title>Login</title>
+    <link rel="stylesheet" href="login.css">  
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+</head>
+<script src="login.js"></script>
+<body>
+    <div class="signin">
+      <div class="signin-div">
+        <img class="signin-img" src="./images/login.svg"/>
+      </div>
+        <div class="card">
+             <h2 class="card-header">
+                Login
+            </h2>
+            <form class="card-content" id = "form-sign-in">
+                <div class = "card-content-div">
+                  <label>Username</label>
+                  <input  id='username' class ="card-input-username" type="text"/>
+                </div>
+                <div class = "card-content-div">
+                  <label>Password</label>
+                  <input id='password' class ="card-input-password" type="password"/>
+                </div>
+                <div class="card-content-div">
+                  <button 
+                  class = "card-btn">Signin</button>
+                </div>
+                <div class="card-footer">
+                <p>No Account ? <strong> <a href="signup.html" class="signup-text">Signup</a></strong></p>
+                <p><a href="" class="signup-text">Forget Password</a></p>
+                </div>
+            </form>   
+        </div>
+    </div>
+</body>
+</html>
