@@ -1,0 +1,75 @@
+body {
+    background-image: url('../images/background_6.jpg');
+    background-repeat: no-repeat;
+    background-position: center; 
+    background-attachment: fixed;
+    background-size: cover;
+  }
+.signup{
+    display: flex;
+
+    margin-top: 100px;
+}
+.signup-div{
+    max-width: 400px;
+}
+.signup-image{
+    width: 100%;
+    height: 500px;
+
+}
+.card{
+    width: 450px;
+    margin-top: 50px;
+    border: 1px solid #f6c5c5;
+    box-shadow: -10px 6px 5px 0px rgba(176,164,176,1) !important;
+    transition: all .3s ease-in-out !important;
+    padding: 10px 40px ;
+}
+.card-header{
+    text-align: center;
+}
+.card-content-div{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+.card-content-div > label{
+    font-family: 'Montserrat', sans-serif;
+    margin-bottom:  4px;
+}
+.card-input{
+    width: 97%;
+    padding :  10px 5px;
+}
+.card-btn{
+    background-color: #eb3f5f;
+    color: white;
+    width: 103%;
+    padding : 10px 5px;
+    border-radius: 20px;
+    font-size: medium;
+    font-family: 'Montserrat', sans-serif;
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+.card-btn:hover{
+    background-color: #63ed35;
+    color: rgb(40, 32, 41);
+}
+
+.signin-text{
+    text-decoration: none;
+    color: #FF6263;
+    font-size: 18px;
+}
+.card-btn, input
+{
+    outline-style: none;
+}
+@media (max-width:1000px){
+    .signup{
+        flex-direction: column;
+        align-items: center;
+    }
+}

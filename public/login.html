@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<head>
+    <title>Login</title>
+    <link rel="stylesheet" href="./css/login.css">  
+</head>
+<script src="./js/login.js"></script>
+<body>
+    <div class="signin">
+      <div class="signin-div">
+        <img class="signin-img" src="./images/login.svg"/>
+      </div>
+        <div class="card">
+             <h2 class="card-header">
+                Login
+            </h2>
+            <form class="card-content" id = "form-sign-in">
+                <div class = "card-content-div">
+                  <label>Username</label>
+                  <input  id='username' class ="card-input" type="text"/>
+                </div>
+                <div class = "card-content-div">
+                  <label>Password</label>
+                  <input id='password' class ="card-input" type="password"/>
+                </div>
+                <div class="card-content-div">
+                  <button 
+                  class = "card-btn">Signin</button>
+                </div>
+                <div class="card-footer">
+                <p>No Account ? <strong> <a href="register.html" class="signup-text">Signup</a></strong></p>
+                <p>Return to the homepage <strong> <a href="index.html" class="signup-text">Home</a></strong></p>
+                </div>
+                <div class="loader">
+                  <div class="scanner" id = "scanner">
+                  </div>
+                </div>
+            </form>   
+        </div>
+    </div>
+</body>
+</html>
